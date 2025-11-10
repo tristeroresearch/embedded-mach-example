@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 export default function Home() {
+  const widgetUrl = process.env.NEXT_PUBLIC_WIDGET_URL || 'https://app.mach.exchange/embed?chains=1,10,143,56,43114&showBranding=true&hideAIInput=true&logoUrl=https://upload.wikimedia.org/wikipedia/commons/3/3d/Injective_l.png';
+
   return (
     <div className="grid grid-rows-[20px_auto_auto_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-black text-white">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -29,7 +31,7 @@ export default function Home() {
       </main>
       <iframe
         className="w-full max-w-[500px] h-[600px] border-0 rounded-lg shadow-lg row-start-3"
-        src="https://app.mach.exchange/embed?chains=1,10,143,56,43114&showBranding=true&hideAIInput=true&logoUrl=https://upload.wikimedia.org/wikipedia/commons/3/3d/Injective_l.png"
+        src={widgetUrl}
       />
     </div>
   );
